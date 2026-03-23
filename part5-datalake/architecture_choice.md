@@ -1,0 +1,7 @@
+## Architecture Recommendation
+
+For a fast-growing food delivery startup handling GPS logs, text reviews, payment transactions, and restaurant images, I recommend a **Data Lakehouse** architecture. A Data Lakehouse combines the cost-effective storage of a Data Lake with the high-performance ACID transactions and data governance typically found in a Data Warehouse. 
+
+There are three specific reasons for this choice. First, the startup handles **diverse data types**. GPS logs and restaurant images are unstructured/semi-structured, making a rigid Data Warehouse unsuitable. A Lakehouse allows these to be stored in their raw format while still being accessible for analysis. Second, the startup requires **advanced analytics and machine learning**. Since location logs and text reviews are likely used for route optimization and sentiment analysis, the Lakehouse provides the direct file access that ML frameworks (like TensorFlow or PyTorch) require, which a standard Data Warehouse hides behind a SQL layer. 
+
+Third, the **growth and schema evolution** of a startup demand flexibility. A Data Lakehouse supports "Schema-on-Read," allowing the startup to evolve its data models as new features are added to the app without expensive and time-consuming database migrations. By choosing a Lakehouse, the startup ensures that their structured payment data remains accurate and compliant, while their unstructured "Big Data" remains available for the innovative AI features that drive growth.
